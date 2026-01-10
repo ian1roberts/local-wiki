@@ -1,5 +1,13 @@
 ---
 title: "Linux"
+listing:
+  contents: "*.qmd"
+  type: grid
+  sort: "title"
+  exclude:
+    - index.qmd
 ---
+
+This section contains Linux-related documentation.
 
 - [nginx notes](nginx.qmd)
