@@ -5,7 +5,7 @@ listing:
   type: grid
   sort: "title"
   exclude:
-    - index.qmd
+    - "index.qmd"
 ---
 
 This section contains Linux-related documentation.
