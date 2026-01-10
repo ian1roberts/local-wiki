@@ -1,0 +1,8 @@
+---
+title: "Home"
+---
+
+Welcome to the local wiki portal.
+
+- Quarto site (this): polished docs + notebooks
+- MediaWiki: collaborative pages at **/mw/**

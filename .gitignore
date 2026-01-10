@@ -1,0 +1,14 @@
+# Quarto caches / temp
+**/.quarto/
+**/_freeze/
+**/.ipynb_checkpoints/
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+
+# Python virtual envs
+.venv/
+venv/
+
+# Keep site/ tracked (DO NOT ignore it)
