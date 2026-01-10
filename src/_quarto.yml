@@ -30,7 +30,7 @@ website:
         text: MediaWiki
       - href: /blog/
         text: Blog
-  breadcrumbs: true  
+  bread-crumbs: true  
   search: true
   page-navigation: true
   page-footer: |
