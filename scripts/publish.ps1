@@ -9,12 +9,13 @@ if ((git branch --show-current).Trim() -ne "main") {
 }
 
 # Commit/push SOURCES (main) to GitHub
-git add -A .\src .\scripts .\.vscode .\README.md 2>$null
+git add -A .\src .\scripts .\.vscode .\README.md .\.gitignore 2>$null
 # (Adjust what you want tracked on main; src/site should be ignored now)
 $Msg = $args[0]
 if (-not $Msg) { $Msg = "Publish" }
 
 if (git status --porcelain) {
+  git reset -q .deploy 2>$null
   git commit -m $Msg
 }
 
