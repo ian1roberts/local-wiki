@@ -9,6 +9,15 @@ project:
 
 website:
   title: "Ian's Local Wiki"
+  sidebar:
+    - title: "Wiki"
+      style: "docked"
+      search: true
+      contents:
+        - section: "Linux"
+          contents:
+            - wiki/linux/index.qmd
+            - wiki/linux/nginx.qmd
   navbar:
     left:
       - href: index.qmd
@@ -20,8 +29,10 @@ website:
       - href: /mw/
         text: MediaWiki
       - href: /blog/
-        text: Blog  
+        text: Blog
+  breadcrumbs: true  
   search: true
+  page-navigation: true
   page-footer: |
     <small>
       Deployed {{< meta commit >}} at {{< meta date >}}
