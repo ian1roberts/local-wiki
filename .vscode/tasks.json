@@ -2,16 +2,19 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Preview (local)",
-      "type": "shell",
-      "command": "cd src && quarto preview . --no-execute",
-      "problemMatcher": [],
-      "group": "build"
-    },
-    {
       "label": "Publish Wiki",
       "type": "shell",
-      "command": "./scripts/publish.sh",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\scripts\\publish.ps1"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
       "problemMatcher": [],
       "group": "build"
     }

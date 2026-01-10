@@ -1,17 +1,35 @@
 $ErrorActionPreference = "Stop"
-$root = Resolve-Path (Join-Path $PSScriptRoot "..")
-Set-Location (Join-Path $root "src")
 
-if (Test-Path "..\site") { Remove-Item "..\site" -Recurse -Force }
-New-Item "..\site" -ItemType Directory | Out-Null
+# Always run from repo root
+$RepoRoot = Resolve-Path (Join-Path $PSScriptRoot "..")
+Set-Location $RepoRoot
 
-quarto render . --no-execute
+# --- Inject deploy metadata for the footer ---
+$Commit = (git rev-parse --short HEAD).Trim()
+$Date   = (Get-Date).ToString("yyyy-MM-dd HH:mm:ss")
 
-Set-Location $root
-git add -A
+@"
+commit: "$Commit"
+date: "$Date"
+"@ | Set-Content -Encoding UTF8 .\src\_deploy.yml
 
-$msg = Read-Host "Commit message"
-if ([string]::IsNullOrWhiteSpace($msg)) { $msg = "publish" }
+# Render Quarto project in src/ (output-dir: site -> src/site/)
+quarto render .\src --no-execute
 
-try { git commit -m $msg } catch { Write-Host "No changes to commit" }
-git push pi main
+# Sanity check
+if (!(Test-Path ".\src\site\index.html")) {
+  throw "src\site\index.html not found. Render failed or output-dir is wrong."
+}
+
+# Commit ONLY rendered output (and the metadata file, so footer matches)
+git add -A .\src\site .\src\_deploy.yml
+
+$Msg = $args[0]
+if (-not $Msg) { $Msg = "Publish" }
+
+if (git status --porcelain) {
+  git commit -m $Msg
+  git push pi main
+} else {
+  Write-Host "No changes to commit; nothing pushed."
+}

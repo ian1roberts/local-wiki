@@ -1,5 +1,11 @@
 ---
-title: "Notebooks"
+title: Notebooks
+listing:
+  contents: .
+  type: table
+  sort: "date desc"
+  filter-ui: true
+  fields: [title, date, description]
 ---
 
-- Add links to rendered notebooks here.
+This page lists rendered notebooks in this folder.

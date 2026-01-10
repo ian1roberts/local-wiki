@@ -2,4 +2,16 @@
 title: "Wiki"
 ---
 
+Welcome to Ian's quarto powered website
+
+Here is a change!
+
+## Top Content
+
+Some content
+
+### Middle Content
+
+Some other content
+
 - [Linux](linux/index.qmd)

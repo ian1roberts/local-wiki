@@ -1,6 +1,11 @@
 project:
   type: website
-  output-dir: ../site
+  output-dir: site
+  render:
+    - "*.qmd"
+    - "wiki/**/*.qmd"
+    - "notebooks/index.qmd"
+    - "notebooks/**/*.ipynb"
 
 website:
   title: "Ian's Local Wiki"
@@ -14,7 +19,16 @@ website:
         text: Notebooks
       - href: /mw/
         text: MediaWiki
+      - href: /blog/
+        text: Blog  
   search: true
+  page-footer: |
+    <small>
+      Deployed {{< meta commit >}} at {{< meta date >}}
+    </small>
+
+metadata-files: 
+  - _deploy.yml
 
 format:
   html:

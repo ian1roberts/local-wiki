@@ -9,7 +9,7 @@ rm -rf ../site
 mkdir -p ../site
 
 # Render without executing anything
-quarto render . --no-execute
+quarto render ./src --no-execute
 
 cd "$ROOT"
 
