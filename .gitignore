@@ -3,6 +3,9 @@
 **/_freeze/
 **/.ipynb_checkpoints/
 
+# Generated deploy metadata
+src/_deploy.yml
+
 # OS/editor junk
 .DS_Store
 Thumbs.db
