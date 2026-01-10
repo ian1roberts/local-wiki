@@ -1,0 +1,11 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Publish Wiki",
+      "type": "node",
+      "request": "launch",
+      "preLaunchTask": "Publish Wiki (Linux/Mac)"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+[
+  {
+    "key": "ctrl+shift+p",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Publish Wiki (Linux/Mac)"
+  }
+]
