@@ -13,5 +13,3 @@ venv/
 
 # Keep site/ tracked (DO NOT ignore it)
 src/site/
-.deploy/
-
