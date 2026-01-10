@@ -4,7 +4,7 @@ listing:
   contents: 
     - "*.qmd"
     - "!index.qmd"
-  type: default
+  type: table
   sort: "title"
 ---
 
