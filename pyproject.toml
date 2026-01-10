@@ -1,9 +1,24 @@
 [project]
 name = "local-wiki"
 version = "0.1.0"
-description = "Add your description here"
+description = "A personal knowledge management system powered by Quarto with automated Git publishing"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "jupyter>=1.1.1",
+]
+
+[project.urls]
+Repository = "wiki@192.168.1.242:/srv/wiki/repo.git"
+
+[tool.uv]
+dev-dependencies = []
+
+# Development Status Classifier
+# This project is in active development
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Documentation",
+    "Topic :: Text Processing :: Markup",
 ]

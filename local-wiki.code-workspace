@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"python.defaultInterpreterPath": "c:\\Users\\ian1r\\github\\local-wiki\\.venv\\Scripts\\python.exe"
+	}
+}
