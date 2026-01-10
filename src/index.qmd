@@ -6,5 +6,7 @@ Welcome to the local wiki portal.
 
 This is the home of Ian's musings
 
+It is optimized for distributed development
+
 - Quarto site (this): polished docs + notebooks
 - MediaWiki: collaborative pages at **/mw/**
