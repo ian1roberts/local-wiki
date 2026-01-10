@@ -29,7 +29,10 @@
         "cwd": "${workspaceFolder}"
       },
       "problemMatcher": [],
-      "group": "build"
+      "group": {
+        "kind": "build",
+      "isDefault": true
     }
+  }
   ]
 }
