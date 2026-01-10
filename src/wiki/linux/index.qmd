@@ -7,6 +7,7 @@ listing:
   type: table
   sort: "title"
 ---
+![Alt text description](images/tux_logo.png)
 
 This section contains Linux-related documentation.
 
