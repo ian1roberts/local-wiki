@@ -5,6 +5,6 @@
 		}
 	],
 	"settings": {
-		"python.defaultInterpreterPath": "c:\\Users\\ian1r\\github\\local-wiki\\.venv\\Scripts\\python.exe"
+		"python.defaultInterpreterPath": "/home/ian/github/local-wiki/.venv/bin/python"
 	}
 }
