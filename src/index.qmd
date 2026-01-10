@@ -10,7 +10,7 @@ It is optimized for distributed development
 
 **Note:** footers now display correct (latest) git commit hash
 
-**Note:** `.deploy` is no longer tracked on main
+**Note:** `.deploy` is no longer tracked on main, and we can publish from linux
 
 - Quarto site (this): polished docs + notebooks
 - MediaWiki: collaborative pages at **/mw/**
