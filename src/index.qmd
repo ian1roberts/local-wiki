@@ -8,5 +8,7 @@ This is the home of Ian's musings
 
 It is optimized for distributed development
 
+**Note:** footers now display correct (latest) git commit hash
+
 - Quarto site (this): polished docs + notebooks
 - MediaWiki: collaborative pages at **/mw/**

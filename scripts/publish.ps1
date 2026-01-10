@@ -3,7 +3,24 @@ $ErrorActionPreference = "Stop"
 $RepoRoot = Resolve-Path (Join-Path $PSScriptRoot "..")
 Set-Location $RepoRoot
 
-# 1) Inject deploy metadata for footer (stored in src/)
+# git main guard
+if ((git branch --show-current).Trim() -ne "main") {
+  throw "Not on main branch in repo root. Aborting."
+}
+
+# Commit/push SOURCES (main) to GitHub
+git add -A .\src .\scripts .\.vscode .\README.md 2>$null
+# (Adjust what you want tracked on main; src/site should be ignored now)
+$Msg = $args[0]
+if (-not $Msg) { $Msg = "Publish" }
+
+if (git status --porcelain) {
+  git commit -m $Msg
+}
+
+git push origin main
+
+# Inject deploy metadata for footer (stored in src/)
 $Commit = (git rev-parse --short HEAD).Trim()
 $Date   = (Get-Date).ToString("yyyy-MM-dd HH:mm:ss")
 
@@ -19,29 +36,13 @@ date: "$Date"
 )
 
 
-# 2) Render locally (frozen)
+# Render locally (frozen)
 quarto render .\src --no-execute
 if (!(Test-Path ".\src\site\index.html")) {
   throw "Render failed: src\site\index.html not found."
 }
 
-# 3) Commit/push SOURCES (main) to GitHub
-git add -A .\src .\scripts .\.vscode .\README.md 2>$null
-# (Adjust what you want tracked on main; src/site should be ignored now)
-$Msg = $args[0]
-if (-not $Msg) { $Msg = "Publish" }
-
-if (git status --porcelain) {
-  git commit -m $Msg
-}
-
-if ((git branch --show-current).Trim() -ne "main") {
-  throw "Not on main branch in repo root. Aborting."
-}
-
-git push origin main
-
-# 4) Update deploy worktree from rendered output
+# Update deploy worktree from rendered output
 # Ensure worktree exists
 if (!(Test-Path ".\.deploy\.git")) {
   git worktree add -B deploy .deploy
@@ -67,4 +68,3 @@ if (git -C .\.deploy status --porcelain) {
   git -C .\.deploy commit -m "Deploy $Msg"
 }
 git -C .\.deploy push pi deploy
-Pop-Location
