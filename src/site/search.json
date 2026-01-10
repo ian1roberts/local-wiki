@@ -21,6 +21,13 @@
     "text": "Top Content\nSome content\n\nMiddle Content\nSome other content\n\nLinux"
   },
   {
+    "objectID": "notebooks/first_notebook_test.html",
+    "href": "notebooks/first_notebook_test.html",
+    "title": "This is a test file",
+    "section": "",
+    "text": "First quarto wiki notebook\n\n\nCode\na = 1\nb = 2\n\n\n\n\nCode\nprint(f\"The sum of a and b is: {a + b}\")\n\n\nThe sum of a and b is: 3"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Home",
