@@ -7,7 +7,7 @@ listing:
   type: table
   sort: "title"
 ---
-![Alt text description](images/tux_logo.png)
+![Alt text description](images/tux_logo.png){fig-align="center" width=25%}
 
 This section contains Linux-related documentation.
 
