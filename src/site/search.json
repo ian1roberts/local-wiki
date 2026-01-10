@@ -1,10 +1,31 @@
 [
   {
-    "objectID": "wiki/linux/nginx.html",
-    "href": "wiki/linux/nginx.html",
-    "title": "nginx notes",
+    "objectID": "notebooks/first_notebook_test.html",
+    "href": "notebooks/first_notebook_test.html",
+    "title": "This is a test file",
     "section": "",
-    "text": "Put your nginx notes here."
+    "text": "First quarto wiki notebook\n\n\nCode\na = 1\nb = 2\n\n\n\n\nCode\nprint(f\"The sum of a and b is: {a + b}\")\n\n\nThe sum of a and b is: 3"
+  },
+  {
+    "objectID": "wiki/linux/index.html",
+    "href": "wiki/linux/index.html",
+    "title": "Linux",
+    "section": "",
+    "text": "nginx notes"
+  },
+  {
+    "objectID": "notebooks/index.html",
+    "href": "notebooks/index.html",
+    "title": "Notebooks",
+    "section": "",
+    "text": "This page lists rendered notebooks in this folder.\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\nThis is a test file\n\n\n\n\n\n\n\n\nJan 10, 2026\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Welcome to the local wiki portal.\nThis is the home of Ian’s musings\n\nQuarto site (this): polished docs + notebooks\nMediaWiki: collaborative pages at /mw/"
   },
   {
     "objectID": "wiki/index.html",
@@ -21,31 +42,10 @@
     "text": "Top Content\nSome content\n\nMiddle Content\nSome other content\n\nLinux"
   },
   {
-    "objectID": "notebooks/first_notebook_test.html",
-    "href": "notebooks/first_notebook_test.html",
-    "title": "This is a test file",
+    "objectID": "wiki/linux/nginx.html",
+    "href": "wiki/linux/nginx.html",
+    "title": "nginx notes",
     "section": "",
-    "text": "First quarto wiki notebook\n\n\nCode\na = 1\nb = 2\n\n\n\n\nCode\nprint(f\"The sum of a and b is: {a + b}\")\n\n\nThe sum of a and b is: 3"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
-    "section": "",
-    "text": "Welcome to the local wiki portal.\nThis is the home of Ian’s musings\n\nQuarto site (this): polished docs + notebooks\nMediaWiki: collaborative pages at /mw/"
-  },
-  {
-    "objectID": "notebooks/index.html",
-    "href": "notebooks/index.html",
-    "title": "Notebooks",
-    "section": "",
-    "text": "Add links to rendered notebooks here."
-  },
-  {
-    "objectID": "wiki/linux/index.html",
-    "href": "wiki/linux/index.html",
-    "title": "Linux",
-    "section": "",
-    "text": "nginx notes"
+    "text": "Put your nginx notes here."
   }
 ]
