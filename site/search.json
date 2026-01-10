@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "wiki/linux/nginx.html",
+    "href": "wiki/linux/nginx.html",
+    "title": "nginx notes",
+    "section": "",
+    "text": "Put your nginx notes here."
+  },
+  {
+    "objectID": "wiki/index.html",
+    "href": "wiki/index.html",
+    "title": "Wiki",
+    "section": "",
+    "text": "Linux"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Welcome to the local wiki portal.\n\nQuarto site (this): polished docs + notebooks\nMediaWiki: collaborative pages at /mw/"
+  },
+  {
+    "objectID": "notebooks/index.html",
+    "href": "notebooks/index.html",
+    "title": "Notebooks",
+    "section": "",
+    "text": "Add links to rendered notebooks here."
+  },
+  {
+    "objectID": "wiki/linux/index.html",
+    "href": "wiki/linux/index.html",
+    "title": "Linux",
+    "section": "",
+    "text": "nginx notes"
+  }
+]
