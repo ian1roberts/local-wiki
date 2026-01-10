@@ -2,9 +2,9 @@
   {
     "objectID": "notebooks/first_notebook_test.html",
     "href": "notebooks/first_notebook_test.html",
-    "title": "This is a test file",
+    "title": "First Notebook Test",
     "section": "",
-    "text": "First quarto wiki notebook\n\n\nCode\na = 1\nb = 2\n\n\n\n\nCode\nprint(f\"The sum of a and b is: {a + b}\")\n\n\nThe sum of a and b is: 3"
+    "text": "This is a test file\nFirst quarto wiki notebook\n\n\nCode\na = 1\nb = 2\n\n\n\n\nCode\nprint(f\"The sum of a and b is: {a + b}\")\n\n\nThe sum of a and b is: 3"
   },
   {
     "objectID": "wiki/linux/index.html",
@@ -18,7 +18,7 @@
     "href": "notebooks/index.html",
     "title": "Notebooks",
     "section": "",
-    "text": "This page lists rendered notebooks in this folder.\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\nThis is a test file\n\n\n\n\n\n\n\n\nJan 10, 2026\n\n\n\n\n\nNo matching items"
+    "text": "This page lists rendered notebooks in this folder.\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\nFirst Notebook Test\n\n\nMy first quarto wiki notebook demonstrating basic Python operations\n\n\n\n\n\nJan 10, 2026\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
