@@ -25,7 +25,7 @@
     "href": "index.html",
     "title": "Home",
     "section": "",
-    "text": "Welcome to the local wiki portal.\nThis is the home of Ian’s musings\n\nQuarto site (this): polished docs + notebooks\nMediaWiki: collaborative pages at /mw/"
+    "text": "Welcome to the local wiki portal.\nThis is the home of Ian’s musings\nIt is optimized for distributed development\n\nQuarto site (this): polished docs + notebooks\nMediaWiki: collaborative pages at /mw/"
   },
   {
     "objectID": "wiki/index.html",
