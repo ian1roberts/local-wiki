@@ -20,7 +20,7 @@ website:
             text: "Programming"
         - section: "Linux"
         - contents:
-          - href: wiki/linux/index.qmd
+          - href: wiki/Linux/index.qmd
             text: "Linux"
 
         # - section: "Linux"
