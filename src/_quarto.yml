@@ -14,10 +14,24 @@ website:
       style: "docked"
       search: true
       contents:
-        - section: "Linux"
-          contents:
-            - wiki/linux/index.qmd
-            - wiki/linux/nginx.qmd
+        - section: "Programming"
+        - contents:
+          - href: Programming/index.qmd
+            text: "Programming"
+        - section:"Linux"
+        - contents:
+          - href: linux/index.qmd
+            text: "Linux"
+
+        # - section: "Linux"
+        # - contents:
+        #   - href: wiki/linux/index.qmd
+        #     text: "Linux"
+        #   - href: wiki/linux/commands.qmd
+        #     text: "Linux Commands"
+        #   - href: wiki/linux/shell-scripting.qmd
+
+
   navbar:
     left:
       - href: index.qmd

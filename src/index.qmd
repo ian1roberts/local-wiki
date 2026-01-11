@@ -2,15 +2,19 @@
 title: "Home"
 ---
 
-Welcome to the local wiki portal.
+Welcome to the local wiki portal, powered by Quarto
 
-This is the home of Ian's musings
+Here you'll find pages on:
 
-It is optimized for distributed development
+- Linux
+- Programming
+- Services & APIs
+- Jupyter Notebooks
+- Raspberry PIs
+- And related things ...
 
-**Note:** footers now display correct (latest) git commit hash
+Jump to other hosts:
 
-**Note:** vs code editor tweaked
-
-- Quarto site (this): polished docs + notebooks
 - MediaWiki: collaborative pages at **/mw/**
+- Blog: blogdown postings at **/blog/**
+- LibreChat: local chat client at **:4080**
