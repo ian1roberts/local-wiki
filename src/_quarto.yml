@@ -22,7 +22,7 @@ website:
         - contents:
           - href: wiki/Linux/index.qmd
             text: "Linux"
-        - section: "Notebooks
+        - section: "Notebooks"
         - contents:
           - href: notebooks/index.qmd
             text: "Notebooks"
@@ -34,7 +34,6 @@ website:
         #   - href: wiki/linux/commands.qmd
         #     text: "Linux Commands"
         #   - href: wiki/linux/shell-scripting.qmd
-
 
   navbar:
     left:
@@ -50,6 +49,8 @@ website:
         text: MediaWiki
       - href: /blog/
         text: Blog
+      - href: :4080/
+        text: Chat
   bread-crumbs: true  
   search: true
   page-navigation: true
