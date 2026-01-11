@@ -16,11 +16,11 @@ website:
       contents:
         - section: "Programming"
         - contents:
-          - href: Programming/index.qmd
+          - href: wiki/Programming/index.qmd
             text: "Programming"
-        - section:"Linux"
+        - section: "Linux"
         - contents:
-          - href: linux/index.qmd
+          - href: wiki/linux/index.qmd
             text: "Linux"
 
         # - section: "Linux"
