@@ -1,0 +1,9 @@
+---
+title: "tidyr"
+date: "2026-01-14"
+description: "tidyr tips n' tricks"
+---
+
+## Tidyr API Hints
+
+Everything related to tidyr goes here

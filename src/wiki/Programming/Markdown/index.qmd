@@ -1,0 +1,13 @@
+---
+title: "Markdown"
+date: "2026-01-14"
+description: "Markdown programming language resources and articles."
+listing:
+  contents: "topics/*.qmd"
+  type: table
+  sort: "title"
+  filter-ui: true
+  fields: [title, date, description]
+---
+
+Markdown Landing Page!
