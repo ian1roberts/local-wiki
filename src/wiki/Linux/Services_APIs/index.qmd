@@ -1,5 +1,5 @@
 ---
-title: "Services & APPIs"
+title: "Services & APIs"
 ---
 
 ## Services & APIs contents
