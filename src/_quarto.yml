@@ -15,11 +15,11 @@ website:
       search: true
       contents:
         - section: "Programming"
-        - contents:
+          contents:
           - href: wiki/Programming/index.qmd
             text: "Programming_sb"
         - section: "Linux"
-        - contents:
+          contents:
           - href: wiki/Linux/index.qmd
             text: "Linux Overview"
           - section: "Services & APIs"
@@ -27,11 +27,11 @@ website:
               - href: wiki/Linux/Services_APIs/index.qmd
                 text: "Services & APIs"
         - section: "Notebooks"
-        - contents:
+          contents:
           - href: notebooks/index.qmd
             text: "Notebooks"      
         - section: "Raspberry Pi"
-        - contents:
+          contents:
           - href: wiki/Raspberry_Pi/index.qmd
             text: "Raspberry Pi"
 
