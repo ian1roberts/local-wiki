@@ -15,9 +15,9 @@ Here you'll find pages on:
 
 Jump to other hosts:
 
-- [MediaWiki](http://wiki.home.arpa/mw): collaborative pages
-- [Blog](http://blog.home.arpa): blogdown postings
-- [LibreChat](http://chat.home.arpa): local chat client
-- [pitv](http://pitv.local:8080): PITV remote control
-- [tvheadend](http://pitv.local:9080): DVB-T settings for pitv
-- [pihole](http://pihole.local/admin/login): Configurations for local dns filtering
+- [MediaWiki](//wiki.home.arpa/mw): collaborative pages
+- [Blog](//blog.home.arpa): blogdown postings
+- [LibreChat](//chat.home.arpa): local chat client
+- [pitv](//pitv.local:8080): PITV remote control
+- [tvheadend](//pitv.local:9080): DVB-T settings for pitv
+- [pihole](//pihole.local/admin/login): Configurations for local dns filtering
