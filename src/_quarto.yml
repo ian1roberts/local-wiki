@@ -57,9 +57,9 @@ website:
         text: Notebooks
       - href: /mw/
         text: MediaWiki
-      - href: /blog/
+      - href: http://blog.home.arpa
         text: Blog
-      - href: http://raspian.local:4080
+      - href: http://chat.home.arpa
         text: Chat
   bread-crumbs: true  
   search: true
