@@ -15,6 +15,9 @@ Here you'll find pages on:
 
 Jump to other hosts:
 
-- MediaWiki: collaborative pages at **/mw/**
-- Blog: blogdown postings at **/blog/**
-- LibreChat: local chat client at **:4080**
+- [MediaWiki](http://raspian.local/mw): collaborative pages
+- [Blog](http://raspian.local/blog): blogdown postings
+- [LibreChat](http://raspian.local:4080): local chat client
+- [pitv](http://pitv.local:8080): PITV remote control
+- [tvheadend](http://pitv.local:9080): DVB-T settings for pitv
+- [pihole](http://pihole.local/admin/login): Configurations for local dns filtering
