@@ -17,7 +17,7 @@ website:
         - section: "Programming"
         - contents:
           - href: wiki/Programming/index.qmd
-            text: "Programming"
+            text: "Programming_sb"
         - section: "Linux"
         - contents:
           - href: wiki/Linux/index.qmd
