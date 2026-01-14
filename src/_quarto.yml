@@ -25,13 +25,13 @@ website:
         - section: "Notebooks"
         - contents:
           - href: notebooks/index.qmd
-            text: "Notebooks"
-
-        # - section: "Linux"
-        # - contents:
-        #   - href: wiki/linux/index.qmd
-        #     text: "Linux"
-        #   - href: wiki/linux/commands.qmd
+            text: "Notebooks"      
+        - section: "Raspberry Pi"
+        - contents:
+           - href: wiki/linux/index.qmd
+             text: "Linux"
+           - href: wiki/linux/services_APIs/index.qmd
+             text: "Services & APIs"
         #     text: "Linux Commands"
         #   - href: wiki/linux/shell-scripting.qmd
 
