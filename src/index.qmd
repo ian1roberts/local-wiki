@@ -15,9 +15,9 @@ Here you'll find pages on:
 
 Jump to other hosts:
 
-- [MediaWiki](http://raspian.local/mw): collaborative pages
-- [Blog](http://raspian.local/blog): blogdown postings
-- [LibreChat](http://raspian.local:4080): local chat client
+- [MediaWiki](http://wiki.home.arpa/mw): collaborative pages
+- [Blog](http://blog.home.arpa): blogdown postings
+- [LibreChat](http://chat.home.arpa): local chat client
 - [pitv](http://pitv.local:8080): PITV remote control
 - [tvheadend](http://pitv.local:9080): DVB-T settings for pitv
 - [pihole](http://pihole.local/admin/login): Configurations for local dns filtering
