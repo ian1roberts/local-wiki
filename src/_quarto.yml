@@ -21,11 +21,11 @@ website:
         - section: "Linux"
         - contents:
           - href: wiki/Linux/index.qmd
-            text: "Linux"
+            text: "Linux Overview"
           - section: "Services & APIs"
-            - contents:
-                - href: wiki/Linux/Services_APIs/index.qmd
-                  text: "Services & APIs"
+            contents:
+              - href: wiki/Linux/Services_APIs/index.qmd
+                text: "Services & APIs"
           - section: "Notebooks"
         - contents:
           - href: notebooks/index.qmd
