@@ -22,7 +22,7 @@ website:
         - contents:
           - href: wiki/Linux/index.qmd
             text: "Linux"
-          - href: wiki/Linux/services_APIs/index.qmd
+          - href: wiki/Linux/Services_APIs/index.qmd
             text: "Services & APIs"
         - section: "Notebooks"
         - contents:
