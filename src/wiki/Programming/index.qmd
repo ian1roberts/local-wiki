@@ -1,5 +1,11 @@
 ---
 title: "Programming"
+listing:
+  contents: "*/index.qmd"
+  type: table
+  sort: "title"
+  filter-ui: true
+  fields: [title, description]
 ---
 
 Programming Landing Page!

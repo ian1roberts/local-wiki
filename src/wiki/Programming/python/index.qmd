@@ -1,0 +1,13 @@
+---
+title: "Python"
+date: "2026-01-14"
+description: "Python programming language resources and articles."
+listing:
+  contents: "topics/*.qmd"
+  type: table
+  sort: "title"
+  filter-ui: true
+  fields: [title, date, description]
+---
+
+Python Landing Page!

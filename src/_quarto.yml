@@ -17,7 +17,13 @@ website:
         - section: "Programming"
           contents:
           - href: wiki/Programming/index.qmd
-            text: "Programming_sb"
+            text: "Programming Home"
+          - href: wiki/Programming/Python/index.qmd
+            text: "Python"
+          - href: wiki/Programming/R/index.qmd
+            text: "R"
+          - href: wiki/Programming/Markdown/index.qmd
+            text: "Markdown"
         - section: "Linux"
           contents:
           - href: wiki/Linux/index.qmd

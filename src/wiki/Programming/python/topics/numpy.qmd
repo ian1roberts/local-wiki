@@ -1,0 +1,9 @@
+---
+title: "numpy"
+date: "2026-01-14"
+description: "numpy tips n' tricks"
+---
+
+## Numpy API Hints
+
+Everything related to numpy goes here

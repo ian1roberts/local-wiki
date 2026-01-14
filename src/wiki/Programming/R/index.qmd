@@ -1,0 +1,9 @@
+---
+title: "pandas"
+date: "2026-01-14"
+description: "pandas tips n' tricks"
+---
+
+## Pandas API Hints
+
+Everything related to pandas goes here
