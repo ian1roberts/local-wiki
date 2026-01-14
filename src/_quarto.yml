@@ -22,7 +22,7 @@ website:
         - contents:
           - href: wiki/Linux/index.qmd
             text: "Linux"
-          - href: wiki/linux/services_APIs/index.qmd
+          - href: wiki/Linux/services_APIs/index.qmd
             text: "Services & APIs"
         - section: "Notebooks"
         - contents:
@@ -30,7 +30,7 @@ website:
             text: "Notebooks"      
         - section: "Raspberry Pi"
         - contents:
-          - href: wiki/RaspberryPi/index.qmd
+          - href: wiki/Raspberry_Pi/index.qmd
             text: "Raspberry Pi"
 
 
