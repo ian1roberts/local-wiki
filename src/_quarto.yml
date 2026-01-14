@@ -26,7 +26,7 @@ website:
             contents:
               - href: wiki/Linux/Services_APIs/index.qmd
                 text: "Services & APIs"
-          - section: "Notebooks"
+        - section: "Notebooks"
         - contents:
           - href: notebooks/index.qmd
             text: "Notebooks"      
