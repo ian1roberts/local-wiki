@@ -1,0 +1,2 @@
+[console_scripts]
+wiki = local_wiki.cli:main

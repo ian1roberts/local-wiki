@@ -1,5 +1,31 @@
 {
   "version": "2.0.0",
+    "inputs": [
+    {
+      "id": "parentFolder",
+      "type": "promptString",
+      "description": "Parent folder under src (e.g. linux/ssh)",
+      "default": "linux"
+    },
+    {
+      "id": "pageTitle",
+      "type": "promptString",
+      "description": "Page title (human-readable)",
+      "default": "SSH + 1Password agent forwarding"
+    },
+    {
+      "id": "fileName",
+      "type": "promptString",
+      "description": "Filename (e.g. ssh_1password_config.md)",
+      "default": "ssh_1password_config.md"
+    },
+    {
+      "id": "pageTags",
+      "type": "promptString",
+      "description": "Comma-separated tags (optional)",
+      "default": "linux, ssh, 1password"
+    }
+  ],
   "tasks": [
     {
       "label": "Publish Wiki (Windows)",
@@ -33,6 +59,31 @@
         "kind": "build",
       "isDefault": true
     }
-  }
+  },
+      {
+      "label": "Wiki: Create new page",
+      "type": "shell",
+      "command": "uv",
+      "args": [
+        "run",
+        "wiki",
+        "new-page",
+        "--root",
+        "${workspaceFolder}",
+        "--parent",
+        "${input:parentFolder}",
+        "--filename",
+        "${input:fileName}",
+        "--title",
+        "${input:pageTitle}",
+        "--tags",
+        "${input:pageTags}"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    }
   ]
 }

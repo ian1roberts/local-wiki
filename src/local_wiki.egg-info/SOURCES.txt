@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+src/local_wiki/__init__.py
+src/local_wiki/cli.py
+src/local_wiki/new_page.py
+src/local_wiki.egg-info/PKG-INFO
+src/local_wiki.egg-info/SOURCES.txt
+src/local_wiki.egg-info/dependency_links.txt
+src/local_wiki.egg-info/entry_points.txt
+src/local_wiki.egg-info/requires.txt
+src/local_wiki.egg-info/top_level.txt
