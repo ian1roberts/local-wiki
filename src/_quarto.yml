@@ -44,6 +44,8 @@ website:
           contents:
           - href: wiki/AI_Agents/index.qmd
             text: "AI Agents Home"
+          - href: wiki/AI_Agents/librechat-setup.qmd
+            text: "LibreChat Integration"
 
 
         #     text: "Linux Commands"
@@ -65,6 +67,7 @@ website:
         text: Blog
       - href: http://chat.home.arpa
         text: Chat
+  breadcrumbs: true  
   search: true
   page-navigation: true
   page-footer: |

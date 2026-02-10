@@ -1,0 +1,40 @@
+---
+title: "LibreChat & MCP Integration"
+date: "2026-02-09"
+categories: [LibreChat, MCP, Integration]
+---
+
+# LibreChat & MCP Integration
+
+Integrating the Model Context Protocol (MCP) with LibreChat creates a powerful environment where the LLM can interact with the local filesystem, remote servers, and external APIs.
+
+## Configuration in `librechat.yaml`
+
+To enable MCP servers in LibreChat, you add them to the `mcpServers` section of your `librechat.yaml`. 
+
+### Example: SSH MCP Server
+
+```yaml
+mcpServers:
+  ssh-raspian:
+    command: "npx"
+    args: 
+      - "-y"
+      - "ssh-mcp"
+      - "--"
+      - "--host=172.17.0.1"
+      - "--user=ian"
+      - "--key=/run/user/1000/mcp-secrets/ai_ssh_key"
+    timeout: 60000
+```
+
+## Benefits of this Setup
+- **Context Awareness**: The agent can read local documentation and code.
+- **Actionable Output**: Instead of just giving instructions, the agent can execute commands (e.g., updating this wiki).
+- **Security**: SSH keys and secret volumes ensure that access is restricted and managed.
+
+## Future Agents
+We are exploring agents that can:
+1. **Auto-Monitor**: Check server health and post reports to the wiki.
+2. **Auto-Document**: Generate documentation as code changes are pushed.
+3. **Interactive Debugging**: Help troubleshoot system errors by directly inspecting logs.
