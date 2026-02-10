@@ -9,6 +9,11 @@ categories: [AI, Agents, MCP]
 
 Welcome to the AI Agents section of the local wiki. This space documents our experiments with the Model Context Protocol (MCP) and the creation of self-documenting, autonomous workflows.
 
+## Active Monitoring
+
+### [System Status Dashboard](system-status.qmd)
+Real-time hardware health and core service status for the Raspberry Pi 5.
+
 ## Documentation Sections
 
 ### [Technical Guide](mcp-technical-guide.qmd)
@@ -20,6 +25,9 @@ How to configure `librechat.yaml` and Docker to bridge the gap between LLMs and 
 ### [Case Study: Automation](case-study-automation.qmd)
 A look at the "Agentic Loop" that built this wiki, detailing the troubleshooting and deployment workflow.
 
+### [Automation Scripts](automation-scripts.qmd)
+Detailed breakdown of the publishing and deployment hooks.
+
 ## The Agentic Ecosystem
 
 We are building a trifecta of access that allows agents to be truly useful:
@@ -28,6 +36,5 @@ We are building a trifecta of access that allows agents to be truly useful:
 - **File Access**: Via the `mcp-filesystem` tool.
 
 ## Future Roadmap
-- **Live Monitoring**: Real-time Pi 5 status dashboards.
 - **Automated Scripting**: A library of "Recipes" for system automation.
 - **Collaborative AI**: Multi-agent workflows for complex DevOps tasks.

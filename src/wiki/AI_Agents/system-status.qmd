@@ -1,0 +1,36 @@
+---
+title: "System Status: Raspberry Pi 5"
+date: "2026-02-10"
+description: "A living dashboard of the Raspberry Pi 5 system hosting this wiki and LibreChat."
+categories: [Status, Monitoring, Pi 5]
+---
+
+# System Status
+
+This page provides a snapshot of the Raspberry Pi 5 system state. This page is generated and updated by an AI Agent via the `ssh-raspian` MCP tool.
+
+## Hardware Health
+
+- **CPU Temperature**: 41.1°C
+- **Memory (RAM)**:
+    - Total: 7.9 GiB
+    - Used: 2.0 GiB
+    - Available: 5.8 GiB
+- **Disk Usage (Root)**: 34% (148 GB available)
+
+## Core Services (Docker)
+
+| Container Name | Status |
+|----------------|--------|
+| `librechat-api-1` | Up 8 minutes |
+| `librechat-rag_api-1` | Up 2 hours |
+| `librechat-vectordb-1` | Up 2 hours |
+| `librechat-mongo-1` | Up 2 hours |
+| `librechat-meilisearch-1` | Up 2 hours |
+
+## Last Update
+*Captured on: 2026-02-10 00:52:58 GMT*
+
+---
+
+*Note: This dashboard demonstrates the 'Living Documentation' capability of agentic workflows. Agents can periodically refresh this page with real-time system metrics.*

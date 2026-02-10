@@ -44,6 +44,8 @@ website:
           contents:
           - href: wiki/AI_Agents/index.qmd
             text: "AI Agents Home"
+          - href: wiki/AI_Agents/system-status.qmd
+            text: "System Status"
           - href: wiki/AI_Agents/mcp-technical-guide.qmd
             text: "Technical Guide"
           - href: wiki/AI_Agents/librechat-setup.qmd
