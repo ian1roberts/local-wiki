@@ -46,8 +46,8 @@ website:
             text: "AI Agents Home"
           - href: wiki/AI_Agents/librechat-setup.qmd
             text: "LibreChat Integration"
-          - href: wiki/AI_Agents/raspberry-pi-5-mcp.qmd
-            text: "Raspberry Pi 5 MCP Setup"
+          - href: wiki/AI_Agents/mcp-raspi-setup.qmd
+            text: "MCP Setup on Pi 5"
 
 
         #     text: "Linux Commands"
