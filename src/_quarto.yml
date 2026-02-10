@@ -65,7 +65,7 @@ website:
         text: Blog
       - href: http://chat.home.arpa
         text: Chat
-  bread-crumbs: true  
+  breadcrumbs: true  
   search: true
   page-navigation: true
   page-footer: |
