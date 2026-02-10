@@ -40,6 +40,10 @@ website:
           contents:
           - href: wiki/Raspberry_Pi/index.qmd
             text: "Raspberry Pi"
+        - section: "AI Agents"
+          contents:
+          - href: wiki/AI_Agents/index.qmd
+            text: "AI Agents Home"
 
 
         #     text: "Linux Commands"
