@@ -19,15 +19,23 @@ The SSH MCP Server allows LLMs to interact securely with remote systems via SSH.
 - **Capabilities**: Command execution (`exec`), Sudo execution (`sudo-exec`).
 - **Configuration**: Managed via `librechat.yaml`.
 
+#### Key Formatting & Troubleshooting
+One common issue encountered during setup is the "Unsupported key format" error. This typically happens when using modern OpenSSH keys (beginning with `-----BEGIN OPENSSH PRIVATE KEY-----`) with the `ssh2` Node.js library.
+
+**Solution**: Convert the key to the older PEM (PKCS#1) format:
+```bash
+ssh-keygen -p -m PEM -f /path/to/key
+```
+The key should then begin with `-----BEGIN RSA PRIVATE KEY-----`.
+
 ## Agentic Workflows
 
 We are developing workflows to automate wiki management, system monitoring, and cross-platform integrations using agents powered by LibreChat and MCP.
 
 ### Automated Wiki Posting
-This very page was generated and deployed by an AI agent using a combination of GitHub and SSH tools. The workflow involves:
-1. Content generation and metadata update.
-2. Committing to the source repository.
-3. Triggering a remote build and deploy script.
+This page is managed and deployed by an AI agent using a combination of GitHub and SSH tools. The workflow involves:
+1. Content generation via GitHub API.
+2. Triggering a remote build and deploy script on the Raspberry Pi via SSH.
 
 ## Resources
 - [Model Context Protocol (MCP) Documentation](https://modelcontextprotocol.io/)
