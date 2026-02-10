@@ -7,43 +7,27 @@ categories: [AI, Agents, MCP]
 
 # AI Agents Home
 
-Welcome to the AI Agents section of the local wiki. This space is dedicated to exploring the capabilities, configurations, and workflows of AI agents, with a particular focus on the Model Context Protocol (MCP).
+Welcome to the AI Agents section of the local wiki. This space documents our experiments with the Model Context Protocol (MCP) and the creation of self-documenting, autonomous workflows.
 
-## Current Tools & Servers
+## Documentation Sections
 
-### SSH MCP Server (`ssh-raspian`)
-The SSH MCP Server allows LLMs to interact securely with remote systems via SSH.
+### [Technical Guide](mcp-technical-guide.qmd)
+The primary reference for setting up MCP servers (SSH, MediaWiki, Filesystem) on a Raspberry Pi 5.
 
-- **Status**: Operational
-- **Host**: `raspian.home.arpa`
-- **Capabilities**: Command execution (`exec`), Sudo execution (`sudo-exec`).
-- **Configuration**: Managed via `librechat.yaml`.
-- **Primary Use**: Remote system management and automated wiki deployment.
+### [LibreChat Integration](librechat-setup.qmd)
+How to configure `librechat.yaml` and Docker to bridge the gap between LLMs and local services.
 
-#### Troubleshooting: "Unsupported key format"
-If you see this error, convert your OpenSSH key to PEM format:
-```bash
-ssh-keygen -p -m PEM -f /path/to/key
-```
+### [Case Study: Automation](case-study-automation.qmd)
+A look at the "Agentic Loop" that built this wiki, detailing the troubleshooting and deployment workflow.
 
-### MediaWiki MCP Server (`mcp-mediawiki`)
-This server allows AI agents to interact directly with the MediaWiki instance hosted at `/mw/`.
+## The Agentic Ecosystem
 
-- **Status**: Operational
-- **Host**: `wiki.home.arpa/mw/`
-- **Capabilities**: Page creation, editing, and history retrieval.
-- **Workflow**: Ideal for collaborative knowledge management where human and AI contributors work side-by-side.
+We are building a trifecta of access that allows agents to be truly useful:
+- **System Access**: Via the `ssh-raspian` MCP server.
+- **Knowledge Access**: Via the `mcp-mediawiki` and Quarto local wiki.
+- **File Access**: Via the `mcp-filesystem` tool.
 
-## Agentic Workflows
-
-We are developing workflows to automate wiki management, system monitoring, and cross-platform integrations.
-
-### Automated Quarto Deployment
-This wiki is a Quarto-based static site. Agents manage updates via a two-stage workflow:
-1. **GitHub Phase**: Content is drafted and navigation updated via the GitHub API.
-2. **SSH Phase**: A remote trigger on the Raspberry Pi executes a publishing script that renders the site and rotates the release.
-
-## Resources
-- [Model Context Protocol (MCP) Documentation](https://modelcontextprotocol.io/)
-- [LibreChat Documentation](https://www.librechat.ai/)
-- [Local Wiki GitHub Repository](https://github.com/ian1roberts/local-wiki)
+## Future Roadmap
+- **Live Monitoring**: Real-time Pi 5 status dashboards.
+- **Automated Scripting**: A library of "Recipes" for system automation.
+- **Collaborative AI**: Multi-agent workflows for complex DevOps tasks.

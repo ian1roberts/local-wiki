@@ -1,0 +1,75 @@
+---
+title: "Raspberry Pi 5 & MCP: The Technical Guide"
+date: "2026-02-09"
+description: "A comprehensive technical manual for establishing MCP server tools with LibreChat on Raspberry Pi 5."
+categories: [AI, Agents, MCP, Raspberry Pi, DevOps]
+---
+
+# Raspberry Pi 5 & MCP Technical Guide
+
+This guide provides a definitive reference for configuring the Model Context Protocol (MCP) ecosystem on a Raspberry Pi 5, specifically for use with LibreChat.
+
+## Infrastructure Overview
+
+- **Hardware**: Raspberry Pi 5 (8GB).
+- **Frontend**: LibreChat (Docker-based).
+- **Connectivity**: Local bridge networking and SSH.
+- **Secrets Management**: Read-only volume mounts for SSH keys and credentials.
+
+## SSH MCP Server (`ssh-raspian`)
+
+The `ssh-mcp` server is the backbone of the agentic system, allowing the AI to manage the host OS.
+
+### 1. Configuration Syntax
+Unlike many MCP servers, the `tufantunc` implementation requires arguments to be passed as flags rather than environment variables.
+
+**LibreChat `librechat.yaml` snippet:**
+```yaml
+ssh-raspian:
+  command: "npx"
+  args: 
+    - "-y"
+    - "ssh-mcp"
+    - "--"
+    - "--host=172.17.0.1" # Bridge gateway to host
+    - "--user=ian"
+    - "--key=/run/user/1000/mcp-secrets/ai_ssh_key"
+  timeout: 60000 # Critical: npx can be slow on ARM
+```
+
+### 2. Networking
+Inside a Docker container, `localhost` is isolated. To allow the agent to SSH into the host Pi, use the Docker gateway IP: **`172.17.0.1`**.
+
+### 3. SSH Private Key Format
+The `ssh2` Node.js library used by the server is incompatible with modern OpenSSH key headers (e.g., from 1Password).
+- **Unsupported Header**: `-----BEGIN OPENSSH PRIVATE KEY-----`
+- **Supported Header**: `-----BEGIN RSA PRIVATE KEY-----` (PEM format)
+
+**Conversion Command**:
+```bash
+ssh-keygen -p -m PEM -f /path/to/key
+```
+
+## Security & Mounts
+
+To protect the host, SSH keys should be mounted as read-only volumes in the `docker-compose.override.yml`:
+
+```yaml
+services:
+  api:
+    volumes:
+      - /run/user/1000/mcp-secrets:/run/user/1000/mcp-secrets:ro
+```
+
+## Performance Optimization
+
+- **Timeouts**: Always set `timeout` to at least 60 seconds. On the Pi 5, the initial `npx` fetch and initialization can exceed 30 seconds.
+- **Persistent Connection**: The server maintains a persistent SSH session once initialized, making subsequent tool calls significantly faster.
+
+## Troubleshooting
+
+| Error | Cause | Solution |
+|-------|-------|----------|
+| `Configuration error: Missing required --host` | Settings in `env:` instead of `args:` | Move parameters to the `args` array with `--` prefix. |
+| `Unsupported key format` | Key is in OpenSSH format | Convert to PEM using `ssh-keygen -m PEM`. |
+| `Initialization timed out` | Timeout too low for Pi 5 | Increase `timeout` to `60000` in `librechat.yaml`. |

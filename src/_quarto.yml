@@ -44,14 +44,12 @@ website:
           contents:
           - href: wiki/AI_Agents/index.qmd
             text: "AI Agents Home"
+          - href: wiki/AI_Agents/mcp-technical-guide.qmd
+            text: "Technical Guide"
           - href: wiki/AI_Agents/librechat-setup.qmd
             text: "LibreChat Integration"
-          - href: wiki/AI_Agents/mcp-raspi-setup.qmd
-            text: "MCP Setup on Pi 5"
-
-
-        #     text: "Linux Commands"
-        #   - href: wiki/linux/shell-scripting.qmd
+          - href: wiki/AI_Agents/case-study-automation.qmd
+            text: "Case Study: Automation"
 
   navbar:
     left:

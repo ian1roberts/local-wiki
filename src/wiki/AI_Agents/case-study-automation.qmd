@@ -1,0 +1,36 @@
+---
+title: "Case Study: The AI Agent's First Deployment"
+date: "2026-02-09"
+description: "A retrospective on how an AI agent troubleshot its own environment to build this wiki section."
+categories: [AI, Agents, Automation, Meta]
+---
+
+# Case Study: The Agent's First Deployment
+
+This page is a meta-documentation of the very process used to create this wiki. It serves as a real-world example of **Agentic AI** in action.
+
+## The Challenge
+An AI agent was tasked with generating documentation for a Raspberry Pi 5 MCP environment. However, the agent's own tools (the `ssh-raspian` server) were failing during the initial setup.
+
+## The Troubleshooting Loop
+
+### 1. Self-Diagnosis
+The agent reviewed the `api-1` logs provided by the user and identified a "Configuration Error." By analyzing the `ssh-mcp` source code on GitHub, the agent realized that the parameters were being passed as environment variables, while the code expected command-line arguments.
+
+### 2. Resolving the Key Hurdle
+Even after fixing the config, the agent hit a second wall: `Unsupported key format`. Through web and code search, the agent identified that the 1Password-generated key used a modern OpenSSH header, while the Node.js `ssh2` library required PEM format.
+
+### 3. The Instruction Loop
+The agent provided the human user with a specific `ssh-keygen` command to convert the key on the host. Once the human performed the conversion, the agent verified the fix by successfully running `uptime` via SSH.
+
+## The "Agentic Loop" Workflow
+Once the tools were operational, the agent established the following automated loop:
+
+1. **Write**: Use the `filesystem` tool to draft `.qmd` files in the local clone on the Pi.
+2. **Commit**: Use the `ssh` tool to commit changes to the source repository.
+3. **Trigger**: Use the `ssh` tool to run the `publish.sh` script.
+4. **Verify**: Use `curl` via SSH to check the live site.
+5. **Notify**: Use the `email` tool to inform the user.
+
+## Conclusion
+This wiki section was not written by a human. It was researched, drafted, troubleshot, and published by an AI agent that was given "eyes" (GitHub/Search tools) and "hands" (SSH/Filesystem tools) via the Model Context Protocol.
