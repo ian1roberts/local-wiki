@@ -9,7 +9,23 @@ categories: [AI, Agents, MCP, Raspberry Pi, DevOps]
 
 This guide provides a definitive reference for configuring the Model Context Protocol (MCP) ecosystem on a Raspberry Pi 5, specifically for use with LibreChat.
 
-## Infrastructure Overview
+## Architectural Overview
+
+The diagram below illustrates the "Agentic Loop" where the AI uses MCP to manage its own host and documentation.
+
+```{mermaid}
+graph TD
+    User((User)) -->|Prompt| LC[LibreChat in Docker]
+    LC -->|JSON-RPC| MCP[SSH MCP Server]
+    MCP -->|SSH| PiHost[Raspberry Pi Host]
+    PiHost -->|Local Script| Pub[publish.sh]
+    Pub -->|Render| Quarto[Quarto Engine]
+    Pub -->|Git Push| Repo[Local Git Repo]
+    Repo -->|Trigger| Hook[post-receive Hook]
+    Hook -->|Update| Site[/var/www/wiki-site/current]
+```
+
+## Infrastructure Configuration
 
 - **Hardware**: Raspberry Pi 5 (8GB).
 - **Frontend**: LibreChat (Docker-based).
@@ -65,11 +81,3 @@ services:
 
 - **Timeouts**: Always set `timeout` to at least 60 seconds. On the Pi 5, the initial `npx` fetch and initialization can exceed 30 seconds.
 - **Persistent Connection**: The server maintains a persistent SSH session once initialized, making subsequent tool calls significantly faster.
-
-## Troubleshooting
-
-| Error | Cause | Solution |
-|-------|-------|----------|
-| `Configuration error: Missing required --host` | Settings in `env:` instead of `args:` | Move parameters to the `args` array with `--` prefix. |
-| `Unsupported key format` | Key is in OpenSSH format | Convert to PEM using `ssh-keygen -m PEM`. |
-| `Initialization timed out` | Timeout too low for Pi 5 | Increase `timeout` to `60000` in `librechat.yaml`. |

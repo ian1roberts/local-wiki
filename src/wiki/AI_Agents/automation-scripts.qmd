@@ -1,0 +1,61 @@
+---
+title: "Automation Scripts & Hooks"
+date: "2026-02-10"
+description: "Documentation for the automation logic that enables agentic wiki management."
+categories: [Automation, Scripts, DevOps]
+---
+
+# Automation Scripts & Hooks
+
+The "Agentic Loop" used to manage this wiki relies on two primary scripts: `publish.sh` for rendering and pushing, and a `post-receive` hook for deployment.
+
+## The Publishing Script (`publish.sh`)
+
+This script resides in the source repository under `scripts/publish.sh`. It handles the transition from Markdown source to a Git-tracked deployment branch.
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+
+# 1. Sync Source
+git push origin main
+
+# 2. Render Site
+quarto render ./src --no-execute
+
+# 3. Update Deploy Worktree
+cp -r ./src/site/* ./.deploy/
+
+# 4. Push to Local Pi Remote
+git -C ./.deploy commit -m "Deploy Update"
+git -C ./.deploy push pi deploy
+```
+
+## The Deployment Hook (`post-receive`)
+
+Located on the Raspberry Pi host at `/srv/wiki/repo.git/hooks/post-receive`, this script is triggered whenever the `deploy` branch is pushed. It manages atomic, timestamped releases.
+
+```bash
+#!/usr/bin/env bash
+REPO=/srv/wiki/repo.git
+WORK=/srv/wiki/worktree
+DEPLOY_ROOT=/var/www/wiki-site
+RELEASES="$DEPLOY_ROOT/releases"
+TS=$(date +"%Y%m%d-%H%M%S")
+NEWREL="$RELEASES/$TS"
+
+# Checkout the deploy branch
+git --git-dir="$REPO" --work-tree="$WORK" checkout -f deploy
+
+# Copy to new release folder
+mkdir -p "$NEWREL"
+rsync -a --delete "$WORK/" "$NEWREL/"
+
+# Atomic Symlink Update
+ln -sfn "$NEWREL" "$DEPLOY_ROOT/current"
+```
+
+## Key Benefits
+- **Atomic Deploys**: The `ln -sfn` command ensures users never see a partially uploaded site.
+- **Rollback Capability**: Older releases are preserved in the `releases/` directory with timestamps.
+- **Agent Compatibility**: Because these are standard shell scripts, AI agents can trigger them via SSH with high reliability.

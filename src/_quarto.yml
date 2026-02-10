@@ -50,6 +50,8 @@ website:
             text: "LibreChat Integration"
           - href: wiki/AI_Agents/case-study-automation.qmd
             text: "Case Study: Automation"
+          - href: wiki/AI_Agents/automation-scripts.qmd
+            text: "Automation Scripts"
 
   navbar:
     left:
