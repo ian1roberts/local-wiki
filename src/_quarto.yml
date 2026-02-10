@@ -46,6 +46,8 @@ website:
             text: "AI Agents Home"
           - href: wiki/AI_Agents/librechat-setup.qmd
             text: "LibreChat Integration"
+          - href: wiki/AI_Agents/raspberry-pi-5-mcp.qmd
+            text: "Raspberry Pi 5 MCP Setup"
 
 
         #     text: "Linux Commands"
@@ -67,7 +69,6 @@ website:
         text: Blog
       - href: http://chat.home.arpa
         text: Chat
-  breadcrumbs: true  
   search: true
   page-navigation: true
   page-footer: |

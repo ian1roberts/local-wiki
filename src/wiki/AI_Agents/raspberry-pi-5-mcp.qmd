@@ -1,0 +1,58 @@
+---
+title: "Building Agentic AI on Raspberry Pi 5"
+date: "2026-02-09"
+description: "A technical retrospective on establishing MCP server tools for agentic workflows using LibreChat and Raspberry Pi 5."
+categories: [Raspberry Pi, AI, Agents, MCP, DevOps]
+---
+
+# Building Agentic AI on Raspberry Pi 5
+
+This page documents the real-world experiences and technical challenges overcome while establishing a Model Context Protocol (MCP) ecosystem on a Raspberry Pi 5 to power agentic AI within LibreChat.
+
+## The Objective
+The goal was to move beyond "chat-only" AI by giving the LLM (via LibreChat) the ability to:
+1. **Interact with the OS**: Execute commands, manage services, and monitor health via SSH.
+2. **Manage Knowledge**: Read and write to both a static Quarto wiki and a dynamic MediaWiki instance.
+3. **Automate Workflows**: Allow the agent to update its own documentation and deployment scripts.
+
+## Core Infrastructure
+- **Hardware**: Raspberry Pi 5 (8GB).
+- **Environment**: Docker-based deployment of LibreChat.
+- **MCP Servers**:
+    - `ssh-mcp`: For remote shell access.
+    - `mcp-mediawiki`: For knowledge base interaction.
+    - `mcp-filesystem`: For direct file manipulation in shared volumes.
+
+## Lessons Learned & Technical Hurdles
+
+### 1. The Configuration Trap
+The `ssh-mcp` server (specifically the `tufantunc` implementation) strictly requires configuration via command-line arguments rather than environment variables. 
+- **Resolution**: Shifted from `env:` blocks in `librechat.yaml` to explicit `--host` and `--user` flags in the `args` section, separated by the `--` delimiter to ensure `npx` passes them correctly.
+
+### 2. SSH Key Format Strictness
+The underlying `ssh2` library in the MCP tool is incompatible with the modern "OpenSSH" private key header produced by 1Password and modern `ssh-keygen`.
+- **The Symptom**: `MCP error -32603: Unsupported key format`.
+- **Resolution**: Convert the key to the older PEM format:
+  ```bash
+  ssh-keygen -p -m PEM -f /path/to/key
+  ```
+
+### 3. Docker Volume Mounts for Secrets
+Running the MCP tools inside the LibreChat `api` container means the container must have access to the SSH keys.
+- **Resolution**: Use `docker-compose.override.yml` to mount a read-only volume for secrets:
+  ```yaml
+  volumes:
+    - /run/user/1000/mcp-secrets:/run/user/1000/mcp-secrets:ro
+  ```
+
+### 4. Performance & Timeouts
+On the ARM architecture of the Pi 5, initializing MCP servers via `npx` can take longer than the default 6-second timeout, especially when downloading or building packages.
+- **Resolution**: Switched to the pre-published `ssh-mcp` package and increased the `timeout` in `librechat.yaml` to `60000` (60 seconds).
+
+## The Result: An Agentic Loop
+The agent now possesses the "Lethal Trifecta" (in a controlled, secure environment):
+1. **Source Access**: Can read/write code and docs.
+2. **System Access**: Can execute commands to build and deploy.
+3. **Network Access**: Can communicate across local services (`wiki.home.arpa`, `chat.home.arpa`).
+
+This setup allows for a fully automated "Draft -> Commit -> Render -> Deploy" cycle managed entirely by the AI agent.
