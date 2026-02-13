@@ -11,18 +11,8 @@ Explore documentation across our core technical domains:
 
 *   **[Linux](./wiki/Linux/index.qmd)**: System administration, server configurations, and shell optimizations.
 *   **[Programming](./wiki/Programming/index.qmd)**: Language guides, snippets, and development environment setups.
-
-### 🤖 AI & Communication
-*   [**LibreChat**](http://chat.home.arpa): Local interface for LLM interaction and agentic workflows.
-
-### 📺 Media & Entertainment
-*   [**PITV Remote**](http://pitv.local:8080): Web interface for local TV control.
-*   [**Tvheadend**](http://pitv.local:9080): DVB-T backend management and streaming settings.
-
 *   **[Services & APIs](./wiki/Linux/Services_APIs/index.qmd)**: Documentation for local web services, reverse proxies, and API integrations.
 *   **[Raspberry Pi](./wiki/Raspberry_Pi/index.qmd)**: Hardware projects, GPIO configurations, and Pi-specific optimizations.
-### 🛠️ Infrastructure
-*   [**Pi-hole**](http://pihole.local/admin/login): Network-wide ad-blocking and DNS management.
 *   **[Jupyter Notebooks](./notebooks/index.qmd)**: Interactive data analysis and experimental code.
 
 ---
@@ -31,6 +21,6 @@ Explore documentation across our core technical domains:
 
 Quick access to local servers and management interfaces:
 
-### 📝 Content & Collaboration
-*   [**MediaWiki**](http://wiki.home.arpa/mw): Collaborative documentation and shared notes.
-*   [**Blog**](http://blog.home.arpa): Long-form articles and project updates via Blogdown.
+### 🤖 AI & Communication
+*   [**LibreChat**](http://chat.home.arpa): Local interface for LLM interaction and agentic workflows.
+
