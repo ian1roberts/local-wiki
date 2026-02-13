@@ -1,23 +1,36 @@
 ---
-title: "Home"
+title: "Knowledge Hub"
+subtitle: "Central documentation and service portal for the home network"
 ---
 
-Welcome to the local wiki portal, powered by Quarto
+Welcome to the **Local Wiki**, a central repository for technical notes, project documentation, and network configurations. This site is powered by Quarto and serves as the primary entry point for managing our local infrastructure.
 
-Here you'll find pages on:
+## 📚 Knowledge Base
 
-- Linux
-- Programming
-- Services & APIs
-- Jupyter Notebooks
-- Raspberry PIs
-- And related things ...
+Explore documentation across our core technical domains:
 
-Jump to other hosts:
+*   **[Linux](./wiki/Linux/index.qmd)**: System administration, server configurations, and shell optimizations.
+*   **[Programming](./wiki/Programming/index.qmd)**: Language guides, snippets, and development environment setups.
 
-- [MediaWiki](http://wiki.home.arpa/mw): collaborative pages
-- [Blog](http://blog.home.arpa): blogdown postings
-- [LibreChat](http://chat.home.arpa): local chat client
-- [pitv](http://pitv.local:8080): PITV remote control
-- [tvheadend](http://pitv.local:9080): DVB-T settings for pitv
-- [pihole](http://pihole.local/admin/login): Configurations for local dns filtering
+### 🤖 AI & Communication
+*   [**LibreChat**](http://chat.home.arpa): Local interface for LLM interaction and agentic workflows.
+
+### 📺 Media & Entertainment
+*   [**PITV Remote**](http://pitv.local:8080): Web interface for local TV control.
+*   [**Tvheadend**](http://pitv.local:9080): DVB-T backend management and streaming settings.
+
+*   **[Services & APIs](./wiki/Linux/Services_APIs/index.qmd)**: Documentation for local web services, reverse proxies, and API integrations.
+*   **[Raspberry Pi](./wiki/Raspberry_Pi/index.qmd)**: Hardware projects, GPIO configurations, and Pi-specific optimizations.
+### 🛠️ Infrastructure
+*   [**Pi-hole**](http://pihole.local/admin/login): Network-wide ad-blocking and DNS management.
+*   **[Jupyter Notebooks](./notebooks/index.qmd)**: Interactive data analysis and experimental code.
+
+---
+
+## 🌐 Network Services
+
+Quick access to local servers and management interfaces:
+
+### 📝 Content & Collaboration
+*   [**MediaWiki**](http://wiki.home.arpa/mw): Collaborative documentation and shared notes.
+*   [**Blog**](http://blog.home.arpa): Long-form articles and project updates via Blogdown.
