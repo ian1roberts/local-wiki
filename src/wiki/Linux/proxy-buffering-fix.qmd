@@ -10,17 +10,15 @@ categories: [Linux, Nginx, LLM, Networking]
 ## The Problem: The "First Try" Hang
 In agentic workflows and LLM-powered applications, users often encounter a frustrating phenomenon: the first prompt sent to a chat interface fails silently, hangs, or requires a refresh to work. Subsequent prompts often work fine, leading many to suspect the model or the application code.
 
+
 ## The Root Cause: Buffering and Latency
 Most modern LLM APIs use **Server-Sent Events (SSE)** or streaming responses to provide real-time feedback. Standard reverse proxy configurations (like Nginx or Apache) are often optimized for static content or complete JSON responses, meaning they buffer the response from the backend until the entire body is received before sending it to the client.
 
 ### Apache (mod_proxy)
-When an LLM starts streaming, the proxy waits. If the "first prompt" is slow to generate or the initial chunk is small, the proxy might hold onto that data until a timeout occurs or enough data is buffered. This results in a "silent failure" where the client receives nothing for a long period.
-### Nginx Configuration
 In Apache, use the `flushpackets` option in your `ProxyPass` directive.
 
 ```apache
-
-## The Solution: Disabling Proxy Buffering
+### Nginx Configuration
 For Nginx, you need to disable both response and request buffering for the specific location handling the API or streaming traffic.
 
 ```nginx
@@ -44,6 +42,9 @@ location /api/stream {
 ```
 
 ProxyPass "/api/stream" "http://backend_server/" flushpackets=on
+When an LLM starts streaming, the proxy waits. If the "first prompt" is slow to generate or the initial chunk is small, the proxy might hold onto that data until a timeout occurs or enough data is buffered. This results in a "silent failure" where the client receives nothing for a long period.
+
+## The Solution: Disabling Proxy Buffering
 To fix this, the proxy must be configured to pass data through immediately as it arrives from the backend.
 
 ```
