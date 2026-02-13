@@ -24,3 +24,13 @@ Quick access to local servers and management interfaces:
 ### 🤖 AI & Communication
 *   [**LibreChat**](http://chat.home.arpa): Local interface for LLM interaction and agentic workflows.
 
+### 📝 Content & Collaboration
+*   [**MediaWiki**](http://wiki.home.arpa/mw): Collaborative documentation and shared notes.
+*   [**Blog**](http://blog.home.arpa): Long-form articles and project updates via Blogdown.
+
+### 📺 Media & Entertainment
+*   [**PITV Remote**](http://pitv.local:8080): Web interface for local TV control.
+*   [**Tvheadend**](http://pitv.local:9080): DVB-T backend management and streaming settings.
+
+### 🛠️ Infrastructure
+*   [**Pi-hole**](http://pihole.local/admin/login): Network-wide ad-blocking and DNS management.
