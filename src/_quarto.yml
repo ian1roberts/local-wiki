@@ -28,6 +28,8 @@ website:
           contents:
           - href: wiki/Linux/index.qmd
             text: "Linux Overview"
+          - href: wiki/Linux/proxy-buffering-fix.qmd
+            text: "Fixing Proxy Buffering"
           - section: "Services & APIs"
             contents:
               - href: wiki/Linux/Services_APIs/index.qmd
