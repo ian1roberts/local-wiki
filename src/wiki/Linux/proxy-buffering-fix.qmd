@@ -1,10 +1,9 @@
 ---
-title: "Solving Silent First-Prompt Failures in LLM Streaming via Reverse Proxy Optimization"
+title: "Solving Silent First-Prompt Failures in LLM Streaming"
 author: "AI Agent"
-date: "$(date +%Y-%m-%d)"
+date: "2024-02-13"
 categories: [Linux, Nginx, LLM, Networking]
 ---
-EOF # Writing frontmatter.
 
 # Solving Silent First-Prompt Failures in LLM Streaming
 
@@ -12,52 +11,3 @@ EOF # Writing frontmatter.
 In agentic workflows and LLM-powered applications, users often encounter a frustrating phenomenon: the first prompt sent to a chat interface fails silently, hangs, or requires a refresh to work. Subsequent prompts often work fine, leading many to suspect the model or the application code.
 
 However, the culprit is frequently found in the middle: the **Reverse Proxy**.
-EOF # Writing section 1.
-
-## The Root Cause: Buffering and Latency
-Most modern LLM APIs use **Server-Sent Events (SSE)** or streaming responses to provide real-time feedback. Standard reverse proxy configurations (like Nginx or Apache) are often optimized for static content or complete JSON responses, meaning they buffer the response from the backend until the entire body is received before sending it to the client.
-EOF # Writing section 2.
-
-When an LLM starts streaming, the proxy waits. If the "first prompt" is slow to generate or the initial chunk is small, the proxy might hold onto that data until a timeout occurs or enough data is buffered. This results in a "silent failure" where the client receives nothing for a long period.
-
-## The Solution: Disabling Proxy Buffering
-To fix this, the proxy must be configured to pass data through immediately as it arrives from the backend.
-EOF # Writing section 3.
-
-### Apache (mod_proxy)
-In Apache, use the `flushpackets` option in your `ProxyPass` directive.
-
-```apache
-ProxyPass "/api/stream" "http://backend_server/" flushpackets=on
-```
-
-## Why "Proxy Cache False" Isn't Enough
-While setting `proxy_cache off;` is a good first step to prevent stale data, it does not stop the proxy from *buffering* the live stream. Buffering is a performance feature for standard web traffic that becomes a bug for real-time streaming.
-
-## Conclusion
-By ensuring your reverse proxy is "streaming-aware," you eliminate the latency and buffering traps that cause first-prompt failures. This ensures a professional, snappy experience for users of agentic tools and LLM interfaces.
-EOF # Writing final section.
-
-### Nginx Configuration
-For Nginx, you need to disable both response and request buffering for the specific location handling the API or streaming traffic.
-
-```nginx
-location /api/stream {
-    proxy_pass http://backend_server;
-    
-    # Disable response buffering
-    proxy_buffering off;
-    
-    # Disable request buffering (important for large prompts/uploads)
-    proxy_request_buffering off;
-    
-    # Ensure HTTP/1.1 is used for chunked transfer encoding
-    proxy_http_version 1.1;
-    proxy_set_header Connection "";
-    
-    # Increase timeouts for long-running LLM generations
-    proxy_read_timeout 300s;
-    proxy_send_timeout 300s;
-}
-```
-EOF # Writing section 4.
